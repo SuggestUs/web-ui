@@ -1,7 +1,18 @@
 import React from "react"
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink, useLocation } from "react-router-dom"
+import Button from '@mui/material/Button';
 
 export default function Navbar() {
+
+  const location = useLocation().pathname;
+  console.log("location", useLocation())
+  const isAuthentication = (location === '/WhoWeAre' || location === 'Mission' || location === '/JoinUs'
+  || location === '/' )
+
+  if (!isAuthentication) {
+
+    return null
+  }
   return (
     <nav aria-label="Site Nav" className=" mx-auto p-5 lg:w-1/2">
       <div className="flex flex-row justify-between">
@@ -48,9 +59,10 @@ export default function Navbar() {
         {/* Additional elemnt of navbar */}
         <div className="flex justify-center">
           <ul className="flex items-center gap-5  text-[1rem]">
-            <li className="hidden lg:flex">
-              Login
-            </li>
+            <Button variant="contained" color="success">
+              <Link to='/Auth' >LogIn</Link>
+            </Button>
+
 
           </ul>
         </div>
