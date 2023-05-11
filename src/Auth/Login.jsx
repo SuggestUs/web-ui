@@ -13,7 +13,7 @@ export default function Login() {
     };
     return (
         <div className='flex flex-col my-auto'>
-            <div className='my-5'>
+            <div className='my-5 '>
                 <FormControl fullWidth >
                     <InputLabel id="demo-simple-select-helper-label">Type</InputLabel>
                     <Select

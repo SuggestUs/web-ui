@@ -66,11 +66,11 @@ export default function Athentication() {
       <Link to="/"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
       </Link>
       <div className='my-10  font-bold  text-3xl '> Welcome to , Suggest<span className="text-green-500">Us</span></div>
-      <div className="bg-white p-4 rounded-lg w-1/2 text-center flex flex-row shadow-md" style={Shadow}>
-        <div className=' flex justify-start w-1/3 items-center'>
+      <div className="bg-white p-4 rounded-lg :w-1/2 text-center flex flex-row shadow-md " style={Shadow}>
+        <div className=' md:flex justify-start w-1/3 items-center hidden'>
           <img src="/spinner.gif" alt="" />
         </div>
-        <div className='justify-end w-2/3 mx-2'>
+        <div className=' md:w-2/3 w-full mx-2 md:justify-end justify-center'>
           <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <Tabs value={value} onChange={handleChange} aria-label="basic tabs example"
