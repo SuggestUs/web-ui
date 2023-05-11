@@ -1,6 +1,5 @@
 import React from 'react'
 import { TextField, Typography, Grid } from '@mui/material';
-import BackButton from '../Navigator/BackButton';
 import NextButton from '../Navigator/NextButton';
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from 'react-router-dom';
@@ -13,7 +12,6 @@ export default function SignInForDoctor() {
     return (
         <div>
 
-            {/* <BackButton path='/Auth' state={{ authNo: 1 }}></BackButton> */}
             <div className="flex flex-col justify-center items-center h-screen">
                 <Link to="/Auth"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
                 </Link>
