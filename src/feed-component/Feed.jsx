@@ -5,4 +5,3 @@ export default function Feed() {
     <div>Feed</div>
   )
 }
-    

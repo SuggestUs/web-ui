@@ -3,15 +3,14 @@ import LoadingButton from '@mui/lab/LoadingButton';
 
 export default function FeedForDoctor() {
     return (
-        <div className='flex flex-col max-h-screen overflow-y-auto scrollbar scrollbar-thumb-gray-500 scrollbar-track-gray-200 '>
-           
+        <div className='flex flex-col h-screen overflow-y-auto scrollbar-thumb-gray-500 scrollbar-track-gray-200 '>
             <div className='flex flex-col border mx-1 my-1 bg-gray-100 rounded-lg'>
                 <div className='h-16'>
                     Profile
                 </div>
                 <div className="border-t border-gray-500 border-solid mx-1 my-1">
 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolor quas, debitis error eos quis nisi voluptatibus labore recusandae libero deleniti quam 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolor quas, debitis error eos quis nisi voluptatibus labore recusandae libero deleniti quam
 
                 </div>
             </div>
