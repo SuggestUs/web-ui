@@ -1,14 +1,46 @@
 import React from 'react'
-import { TextField, Typography, Grid } from '@mui/material';
+import { TextField, Grid } from '@mui/material';
 import NextButton from '../Navigator/NextButton';
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from 'react-router-dom';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import { useState } from 'react';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
+
+
 
 export default function SignInForDoctor() {
 
     const Shadow = {
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
     }
+
+    //  for medical specialization data
+    const medical_specialization = [
+        { feild: 'cardiolog' },
+        { feild: 'Dermatology' },
+        { feild: 'Endocrinology' },
+        { feild: 'Gastroenterology' },
+        { feild: 'Hematology' },
+        { feild: 'Neurology' },
+        { feild: 'Oncology' },
+        { feild: 'Pediatrics' },
+        { feild: 'Psychiatry' },
+        { feild: 'Pulmonology' },
+        { feild: 'Pulmonology' },
+        { feild: 'Radiology' },
+        { feild: 'Surgery' },
+    ];
+
+    // for medical specialization
+    const [Role, setRole] = useState("None");
+
+    const handleChange = (event) => {
+        setRole(event.target.value);
+    };
+
     return (
         <div>
 
@@ -61,15 +93,25 @@ export default function SignInForDoctor() {
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <TextField
-                                label="Medical Specialization"
-                                name="Medical Specialization"
-                                // value={formData.confirmPassword}
-                                // onChange={handleChange}
-                                variant="outlined"
-                                fullWidth
-                            //className={classes.input}
-                            />
+                            <FormControl fullWidth >
+                                <InputLabel id="demo-simple-select-helper-label">Medical specialization</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={Role}
+                                    label="Role"
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value='None'>
+                                        None
+                                    </MenuItem>
+                                    {medical_specialization.map((specialization, index) => (
+                                        <MenuItem key={index} value={specialization.feild}>
+                                            {specialization.feild}
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -95,7 +137,7 @@ export default function SignInForDoctor() {
                         {/* <Grid item xs={12} sm={6} className='flex  justify-center items-center'>
                             <Button onClick={isSignIn} variant='contained' color='success'>Sign In</Button>
                         </Grid> */}
-                        <Grid item xs={12} sm={6} className='flex  justify-center items-center'>
+                        <Grid Grid item xs={12} sm={6} className='flex  justify-center items-center' >
                             <NextButton path='/Auth/SignInForDoctor/PersonalDetails' state={null}></NextButton>
                         </Grid>
                     </Grid>
@@ -103,7 +145,7 @@ export default function SignInForDoctor() {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
 

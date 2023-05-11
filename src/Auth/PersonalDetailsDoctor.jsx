@@ -4,13 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from 'react-router-dom';
 
-
 export default function PersonalDetailsDoctor() {
 
     const navigate = useNavigate()
     const [SignIn, setSignIn] = useState(false)
 
-    
+
     const Shadow = {
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
     }
@@ -29,7 +28,7 @@ export default function PersonalDetailsDoctor() {
     return (
         <div>
             <div className="flex flex-col justify-center items-center h-screen">
-                <Link to="/"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
+                <Link to="/Auth/SignInForDoctor"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
                 </Link>
                 <div className='my-1 font-inter font-bold text-3xl mb-5'> {"Welcome    "}<span className="text-green-500">Doctor !!</span></div>
                 <div className=" bg-white p-4 rounded-lg w-4/5 overflow-y-auto shadow-md h-96 " style={Shadow}>
