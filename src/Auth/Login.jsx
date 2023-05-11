@@ -7,9 +7,7 @@ import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 
 export default function Login() {
-
     const [Role, setRole] = React.useState('User');
-
     const handleChange = (event) => {
         setRole(event.target.value);
     };
@@ -25,7 +23,7 @@ export default function Login() {
                         value={Role}
                         label="Role"
                         onChange={handleChange}
-                        
+
                     >
                         <MenuItem value="">
                             <em>None</em>
@@ -52,8 +50,6 @@ export default function Login() {
                         }}
                     />
                 </FormControl>
-             
-
             </div>
             <div className='my-auto'>
                 <Button variant='contained' color='success'>Log In</Button>
