@@ -2,8 +2,7 @@ import React from "react";
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, NavLink, useLocation } from "react-router-dom"
-import Button from '@mui/material/Button';
+import { Link, useLocation } from "react-router-dom"
 
 //  Navigation items that will be rendered in the navbar+mobile menu
 //  If you want to add more items, just add them to this array
