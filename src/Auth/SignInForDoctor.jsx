@@ -99,7 +99,7 @@ export default function SignInForDoctor() {
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     value={Role}
-                                    label="Role"
+                                    label="Medical specialization"
                                     onChange={handleChange}
                                 >
                                     <MenuItem value='None'>
@@ -137,7 +137,7 @@ export default function SignInForDoctor() {
                         {/* <Grid item xs={12} sm={6} className='flex  justify-center items-center'>
                             <Button onClick={isSignIn} variant='contained' color='success'>Sign In</Button>
                         </Grid> */}
-                        <Grid Grid item xs={12} sm={6} className='flex  justify-center items-center' >
+                        <Grid  item xs={12} sm={6} className='flex  justify-center items-center' >
                             <NextButton path='/Auth/SignInForDoctor/PersonalDetails' state={null}></NextButton>
                         </Grid>
                     </Grid>
