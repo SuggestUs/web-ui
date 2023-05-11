@@ -65,8 +65,8 @@ export default function Athentication() {
     <div className="flex flex-col justify-center items-center h-screen ">
       <Link to="/"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
       </Link>
-      <div className='my-10  font-bold  text-3xl '> Welcome to , Suggest<span className="text-green-500">Us</span></div>
-      <div className="bg-white p-4 rounded-lg :w-1/2 text-center flex flex-row shadow-md " style={Shadow}>
+      <div className='my-10  font-bold text-center  text-3xl '> Welcome to , Suggest<span className="text-green-500">Us</span></div>
+      <div className="bg-white p-4 rounded-lg md:w-1/2 w-5/6 text-center flex flex-row shadow-md " style={Shadow}>
         <div className=' md:flex justify-start w-1/3 items-center hidden'>
           <img src="/spinner.gif" alt="" />
         </div>
