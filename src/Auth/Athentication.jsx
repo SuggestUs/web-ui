@@ -67,8 +67,8 @@ export default function Athentication() {
       </Link>
       <div className='my-10  font-bold  text-3xl '> Welcome to , Suggest<span className="text-green-500">Us</span></div>
       <div className="bg-white p-4 rounded-lg w-1/2 text-center flex flex-row shadow-md" style={Shadow}>
-        <div className=' flex justify-start w-1/3  mx-2 border border-green-400 items-center h-96 '>
-          <img src="https://github.com/priyankarpal/ProjectsHut/assets/88102392/59e42057-67f8-40a3-8f97-3e5b45b6363c" alt="" />
+        <div className=' flex justify-start w-1/3 items-center'>
+          <img src="/spinner.gif" alt="" />
         </div>
         <div className='justify-end w-2/3 mx-2'>
           <Box sx={{ width: '100%' }}>

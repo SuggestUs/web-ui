@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { } from 'react'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -10,17 +10,13 @@ import Avatar from '@mui/material/Avatar';
 import DynamicFeedOutlinedIcon from '@mui/icons-material/DynamicFeedOutlined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 import MarkEmailUnreadOutlinedIcon from '@mui/icons-material/MarkEmailUnreadOutlined';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import HomeIcon from '@mui/icons-material/Home';
-import PostAddIcon from '@mui/icons-material/PostAdd';
 // files 
 import AccountofDoctor from './AccountofDoctor';
 import CommunityForDoctor from './CommunityForDoctor';
 import RequestForDoctors from './RequestForDoctors';
 import FeedForDoctor from './FeedForDoctor';
-import { useLocation } from 'react-router-dom';
-import Cat from '../../../public/favicon.avif'
+import Cat from '/favicon.avif'
 
 
 function TabPanel(props) {
@@ -79,19 +75,19 @@ export default function DashBordForDoctor() {
                         </Tabs>
                     </Box>
                     <TabPanel value={value} index={0}>
-                        <FeedForDoctor/>
+                        <FeedForDoctor />
                     </TabPanel>
                     <TabPanel value={value} index={1}>
-                        <CommunityForDoctor/>
+                        <CommunityForDoctor />
                     </TabPanel>
                     <TabPanel value={value} index={2}>
-                        <CommunityForDoctor/>
+                        <CommunityForDoctor />
                     </TabPanel>
                     <TabPanel value={value} index={3}>
-                        <RequestForDoctors/>
+                        <RequestForDoctors />
                     </TabPanel>
                     <TabPanel value={value} index={4}>
-                        <AccountofDoctor/>
+                        <AccountofDoctor />
                     </TabPanel>
 
                 </Box>
