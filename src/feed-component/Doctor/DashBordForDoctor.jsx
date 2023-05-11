@@ -84,13 +84,13 @@ export default function DashBordForDoctor() {
                     <TabPanel value={value} index={1}>
                         <CommunityForDoctor/>
                     </TabPanel>
-                    <TabPanel value={value} index={1}>
+                    <TabPanel value={value} index={2}>
                         <CommunityForDoctor/>
                     </TabPanel>
-                    <TabPanel value={value} index={2}>
+                    <TabPanel value={value} index={3}>
                         <RequestForDoctors/>
                     </TabPanel>
-                    <TabPanel value={value} index={3}>
+                    <TabPanel value={value} index={4}>
                         <AccountofDoctor/>
                     </TabPanel>
 

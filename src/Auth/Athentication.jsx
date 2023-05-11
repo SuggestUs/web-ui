@@ -56,7 +56,7 @@ export default function Athentication() {
 
   useEffect(() => {
     //  this function make signIn tab open for user if user navigate back from page which contains doctor's authentication
-    console.log("location.state", location)
+    // console.log("location.state", location)
     if (location.state !== null) {
       setValue(location.state.authNo);
     }

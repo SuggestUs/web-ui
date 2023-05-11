@@ -2,8 +2,7 @@ import React from "react";
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link, NavLink, useLocation } from "react-router-dom"
-import Button from '@mui/material/Button';
+import { Link, useLocation } from "react-router-dom"
 
 //  Navigation items that will be rendered in the navbar+mobile menu
 //  If you want to add more items, just add them to this array
@@ -19,7 +18,7 @@ export default function Navbar() {
   const location = useLocation().pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  console.log("location", useLocation())
+  // console.log("location", useLocation())
   const isAuthentication = (location === '/WhoWeAre' || location === '/Mission' || location === '/JoinUs'
     || location === '/')
 
@@ -60,9 +59,8 @@ export default function Navbar() {
         </div>
         {/* Additional elemnt of navbar */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            <Link to='/Auth'>Log in<span aria-hidden="true">&rarr;</span></Link>
-          </a>
+          <Link to='/Auth'>Log in<span aria-hidden="true">&rarr;</span></Link>
+
         </div>
       </nav>
       <Dialog
@@ -90,20 +88,14 @@ export default function Navbar() {
                     key={item.name}
                     to={item.to}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={()=>setMobileMenuOpen(false)}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  onClick={()=>setMobileMenuOpen(false)}
-                >
-                 <Link to='/Auth'>Log in<span aria-hidden="true">&rarr;</span></Link>
-                </a>
+                <Link to='/Auth' onClick={() => setMobileMenuOpen(false)} className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in<span aria-hidden="true">&rarr;</span></Link>
               </div>
             </div>
           </div>

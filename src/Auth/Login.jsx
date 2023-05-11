@@ -15,7 +15,7 @@ export default function Login() {
         <div className='flex flex-col my-auto'>
             <div className='my-5'>
                 <FormControl fullWidth >
-                    <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label">Type</InputLabel>
                     <Select
 
                         labelId="demo-simple-select-label"
@@ -25,9 +25,7 @@ export default function Login() {
                         onChange={handleChange}
 
                     >
-                        <MenuItem value="">
-                            <em>None</em>
-                        </MenuItem>
+
                         <MenuItem value={'User'}>User</MenuItem>
                         <MenuItem value={'Doctor'}>Doctor</MenuItem>
                     </Select>
