@@ -1,8 +1,9 @@
 import React from "react";
 import { Dialog } from "@headlessui/react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link, NavLink, useLocation } from "react-router-dom"
+import Button from '@mui/material/Button';
 
 //  Navigation items that will be rendered in the navbar+mobile menu
 //  If you want to add more items, just add them to this array
@@ -12,9 +13,20 @@ const navigation = [
   { name: "Who we are", to: "/WhoWeAre" }
 ];
 
+
 export default function Navbar() {
+
+  const location = useLocation().pathname;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  console.log("location", useLocation())
+  const isAuthentication = (location === '/WhoWeAre' || location === 'Mission' || location === '/JoinUs'
+    || location === '/')
+
+  if (!isAuthentication) {
+
+    return null
+  }
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <nav
@@ -45,12 +57,13 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
+          </div>
+          {/* Additional elemnt of navbar */}
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+              <Link to='/Auth'>Log in<span aria-hidden="true">&rarr;</span></Link>
+            </a>
+          </div>
       </nav>
       <Dialog
         as="div"
