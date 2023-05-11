@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Mission from './components/Mission';
-import JoinUs from './components/JoinUs';
-import WhoWeAre from './components/WhoWeAre';
-import IntroPage from './components/IntroPage';
+import Mission from './pages/Mission';
+import JoinUs from './pages/JoinUs';
+import WhoWeAre from './pages/WhoWeAre';
+import IntroPage from './pages/IntroPage';
+import Footer from './components/Footer';
+
 
 export default function MainRoute() {
   return (
@@ -17,6 +19,7 @@ export default function MainRoute() {
           <Route path="/Mission" element={<Mission />} />
           <Route path="/JoinUs" element={<JoinUs />} />
         </Routes>
+        <Footer />
       </main>
     </Router>
   );
