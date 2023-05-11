@@ -20,7 +20,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   console.log("location", useLocation())
-  const isAuthentication = (location === '/WhoWeAre' || location === 'Mission' || location === '/JoinUs'
+  const isAuthentication = (location === '/WhoWeAre' || location === '/Mission' || location === '/JoinUs'
     || location === '/')
 
   if (!isAuthentication) {
@@ -57,13 +57,13 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          </div>
-          {/* Additional elemnt of navbar */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              <Link to='/Auth'>Log in<span aria-hidden="true">&rarr;</span></Link>
-            </a>
-          </div>
+        </div>
+        {/* Additional elemnt of navbar */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <Link to='/Auth'>Log in<span aria-hidden="true">&rarr;</span></Link>
+          </a>
+        </div>
       </nav>
       <Dialog
         as="div"
