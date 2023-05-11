@@ -20,7 +20,7 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   console.log("location", useLocation())
-  const isAuthentication = (location === '/WhoWeAre' || location === 'Mission' || location === '/JoinUs'
+  const isAuthentication = (location === '/WhoWeAre' || location === '/Mission' || location === '/JoinUs'
     || location === '/')
 
   if (!isAuthentication) {
@@ -57,13 +57,13 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          </div>
-          {/* Additional elemnt of navbar */}
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              <Link to='/Auth'>Log in<span aria-hidden="true">&rarr;</span></Link>
-            </a>
-          </div>
+        </div>
+        {/* Additional elemnt of navbar */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            <Link to='/Auth'>Log in<span aria-hidden="true">&rarr;</span></Link>
+          </a>
+        </div>
       </nav>
       <Dialog
         as="div"
@@ -90,6 +90,7 @@ export default function Navbar() {
                     key={item.name}
                     to={item.to}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    onClick={()=>setMobileMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
@@ -99,8 +100,9 @@ export default function Navbar() {
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  onClick={()=>setMobileMenuOpen(false)}
                 >
-                  Log in
+                 <Link to='/Auth'>Log in<span aria-hidden="true">&rarr;</span></Link>
                 </a>
               </div>
             </div>

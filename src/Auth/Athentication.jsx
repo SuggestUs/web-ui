@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -6,10 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import DummyImage from '../../public/favicon.avif'
 import Login from './Login';
-import SignInForDoctor from './SignInForDoctor';
-import SignInForUser from './SignInForUser';
 import SignIn from './SignIn';
-import { colors } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 
 function TabPanel(props) {
@@ -72,10 +69,10 @@ export default function Athentication() {
         <div className="flex flex-col justify-center items-center h-screen ">
            <div className='my-10 font-serif'> Welcome to , Suggest<span className="text-green-500">Us</span></div>
             <div className="bg-white p-4 rounded-lg w-1/2 text-center flex flex-row shadow-md" style={Shadow}>
-                <div className=' flex justify-start w-1/3 mx-2 border border-green-400 items-center h-96 '>
+                <div className=' md:flex justify-start w-1/3 mx-2 border border-green-400 items-center h-96 hidden'>
                     {/* <img src={DummyImage} alt='Dummy Image'></img> */}
                  </div>
-                <div className='justify-end w-2/3 mx-2'>
+                <div className='justify-end md:w-2/3 mx-2 w-full'>
                 <Box sx={{ width: '100%' }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" 
