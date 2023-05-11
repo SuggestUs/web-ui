@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Athentication from './Auth/Athentication';
 import SignInForDoctor from './Auth/SignInForDoctor';
 import PersonalDetailsDoctor from './Auth/PersonalDetailsDoctor';
-import FeedForDoctor from './feed-component/FeedForDoctor';
+import DashBordForDoctor from './feed-component/Doctor/DashBordForDoctor';
 
 export default function MainRoute() {
   return (
@@ -24,7 +24,7 @@ export default function MainRoute() {
           <Route path="/Auth" element={<Athentication />} />
           <Route path="/Auth/SignInForDoctor" element={<SignInForDoctor />} />
           <Route path="/Auth/SignInForDoctor/PersonalDetails" element={<PersonalDetailsDoctor />} />
-          <Route path="/feedForDoctor" element={<FeedForDoctor />} />
+          <Route path="/Feed" element={<DashBordForDoctor />} />
         </Routes>
         <Footer />
       </main>

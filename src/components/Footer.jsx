@@ -1,6 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 export default function Footer() {
+    const isAuthentication = (location === '/WhoWeAre' || location === '/Mission' || location === '/JoinUs'
+        || location === '/')
+
+    if (!isAuthentication) {
+
+        return null
+    }
     return (
 
         <footer aria-label="Site Footer" className="bg-gray-50">

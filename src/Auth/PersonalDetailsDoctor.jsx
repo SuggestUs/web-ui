@@ -4,28 +4,28 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { TextField, Typography, Button, Grid } from '@mui/material';
-// import { Button, Grid } from '@mui/material';
-import { useNavigate } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import BackButton from '../Navigator/BackButton';
 import NextButton from '../Navigator/NextButton';
 
 
 export default function PersonalDetailsDoctor() {
 
+    const navigate = useNavigate()
+    const [SignIn, setSignIn] = useState(false)
+
+    
     const Shadow = {
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
     }
     
-    const navigate = useNavigate()
-    const [SignIn, setSignIn] = useState(false)
     
     const isSignIn = () => {
         setSignIn(true)
+        navigate('/Feed')
     }
-    console.log('SignIn', SignIn);
-     
+    
     if(SignIn){
-        navigate('/feedForDoctor')
     }
 
     return (
