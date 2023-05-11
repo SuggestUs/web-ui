@@ -6,12 +6,10 @@
 
 ```
 pnpm i
-
 ```
 
 4. Run the project using the following command
 
 ```
 pnpm start
-
 ```
