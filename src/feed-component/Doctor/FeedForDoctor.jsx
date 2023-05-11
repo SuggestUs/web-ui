@@ -55,6 +55,66 @@ export default function FeedForDoctor() {
 
                 </div>
             </div>
+            <div className='flex flex-col border mx-1 my-1 bg-gray-100 rounded-lg'>
+                <div className='h-16'>
+                    Profile
+                </div>
+                <div className="border-t border-gray-500 border-solid mx-1 my-1">
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolor quas, debitis error eos quis nisi voluptatibus labore recusandae libero deleniti quam molestiae tempore ut obcaecati fuga blanditiis, tenetur voluptate ipsum explicabo sapiente iusto! Cupiditate temporibus nam ut suscipit aperiam, quis fugiat provident fuga, enim laborum non deleniti facere ipsum, aut ex soluta veritatis incidunt et reprehenderit. Commodi sed tenetur molestias laudantium quae eum ipsa cum mollitia
+
+                </div>
+            </div>
+            <div className='flex flex-col border mx-1 my-1 bg-gray-100 rounded-lg'>
+                <div className='h-16'>
+                    Profile
+                </div>
+                <div className="border-t border-gray-500 border-solid mx-1 my-1">
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolor quas, debitis error eos quis nisi voluptatibus labore recusandae libero deleniti quam molestiae tempore ut obcaecati fuga blanditiis, tenetur voluptate ipsum explicabo sapiente iusto! Cupiditate temporibus nam ut suscipit aperiam, quis fugiat provident fuga, enim laborum non deleniti facere ipsum, aut ex soluta veritatis incidunt et reprehenderit. Commodi sed tenetur molestias laudantium quae eum ipsa cum mollitia
+
+                </div>
+            </div>
+            <div className='flex flex-col border mx-1 my-1 bg-gray-100 rounded-lg'>
+                <div className='h-16'>
+                    Profile
+                </div>
+                <div className="border-t border-gray-500 border-solid mx-1 my-1">
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolor quas, debitis error eos quis nisi voluptatibus labore recusandae libero deleniti quam molestiae tempore ut obcaecati fuga blanditiis, tenetur voluptate ipsum explicabo sapiente iusto! Cupiditate temporibus nam ut suscipit aperiam, quis fugiat provident fuga, enim laborum non deleniti facere ipsum, aut ex soluta veritatis incidunt et reprehenderit. Commodi sed tenetur molestias laudantium quae eum ipsa cum mollitia
+
+                </div>
+            </div>
+            <div className='flex flex-col border mx-1 my-1 bg-gray-100 rounded-lg'>
+                <div className='h-16'>
+                    Profile
+                </div>
+                <div className="border-t border-gray-500 border-solid mx-1 my-1">
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolor quas, debitis error eos quis nisi voluptatibus labore recusandae libero deleniti quam molestiae tempore ut obcaecati fuga blanditiis, tenetur voluptate ipsum explicabo sapiente iusto! Cupiditate temporibus nam ut suscipit aperiam, quis fugiat provident fuga, enim laborum non deleniti facere ipsum, aut ex soluta veritatis incidunt et reprehenderit. Commodi sed tenetur molestias laudantium quae eum ipsa cum mollitia
+
+                </div>
+            </div>
+            <div className='flex flex-col border mx-1 my-1 bg-gray-100 rounded-lg'>
+                <div className='h-16'>
+                    Profile
+                </div>
+                <div className="border-t border-gray-500 border-solid mx-1 my-1">
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolor quas, debitis error eos quis nisi voluptatibus labore recusandae libero deleniti quam molestiae tempore ut obcaecati fuga blanditiis, tenetur voluptate ipsum explicabo sapiente iusto! Cupiditate temporibus nam ut suscipit aperiam, quis fugiat provident fuga, enim laborum non deleniti facere ipsum, aut ex soluta veritatis incidunt et reprehenderit. Commodi sed tenetur molestias laudantium quae eum ipsa cum mollitia
+
+                </div>
+            </div>
+            <div className='flex flex-col border mx-1 my-1 bg-gray-100 rounded-lg'>
+                <div className='h-16'>
+                    Profile
+                </div>
+                <div className="border-t border-gray-500 border-solid mx-1 my-1">
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolor quas, debitis error eos quis nisi voluptatibus labore recusandae libero deleniti quam molestiae tempore ut obcaecati fuga blanditiis, tenetur voluptate ipsum explicabo sapiente iusto! Cupiditate temporibus nam ut suscipit aperiam, quis fugiat provident fuga, enim laborum non deleniti facere ipsum, aut ex soluta veritatis incidunt et reprehenderit. Commodi sed tenetur molestias laudantium quae eum ipsa cum mollitia
+
+                </div>
+            </div>
             <div className='flex flex-col border mx-1 my-1 bg-gray-100 rounded-lg '>
                 <LoadingButton loading variant="outlined">
                     Submit
