@@ -1,14 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Mission from './pages/Mission';
-import WhoWeAre from './pages/WhoWeAre';
-import HomePage from './pages/HomePage';
-import Footer from './components/Footer';
-import Athentication from './Auth/Athentication';
-import SignInForDoctor from './Auth/SignInForDoctor';
-import PersonalDetailsDoctor from './Auth/PersonalDetailsDoctor';
-import DashBordForDoctor from './feed-component/Doctor/DashBordForDoctor';
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
+
+const Navbar = lazy(() => import('./components/Navbar'))
+const Mission = lazy(() => import('./pages/Mission'))
+const WhoWeAre = lazy(() => import('./pages/WhoWeAre'))
+const HomePage = lazy(() => import('./pages/HomePage'))
+const Footer = lazy(() => import('./components/Footer'))
+const Authentication = lazy(() => import('./Auth/Authentication1'))
+const SignInForDoctor = lazy(() => import('./Auth/SignInForDoctor'))
+const PersonalDetailsDoctor = lazy(() => import('./Auth/PersonalDetailsDoctor'))
+const DashBordForDoctor = lazy(() =>
+  import('./feed-component/Doctor/DashBordForDoctor')
+)
 
 export default function MainRoute() {
   return (
@@ -16,16 +20,58 @@ export default function MainRoute() {
       <main>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/WhoWeAre" element={<WhoWeAre />} />
-          <Route path="/Mission" element={<Mission />} />
-          <Route path="/Auth" element={<Athentication />} />
-          <Route path="/Auth/SignInForDoctor" element={<SignInForDoctor />} />
-          <Route path="/Auth/SignInForDoctor/PersonalDetails" element={<PersonalDetailsDoctor />} />
-          <Route path="/Feed" element={<DashBordForDoctor />} />
+          <Route
+            path='/'
+            element={
+              <Suspense fallback={<>Loading</>}>
+                <HomePage />{' '}
+              </Suspense>
+            }
+          />
+          <Route
+            path='/WhoWeAre'
+            element={
+              <Suspense fallback={<>Loading</>}>
+                <WhoWeAre />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Mission'
+            element={
+              <Suspense fallback={<>Loading</>}>
+                <Mission />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Auth'
+            element={
+              <Suspense fallback={<>Loading</>}>
+                <Authentication />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Auth/SignInForDoctor'
+            element={
+              <Suspense fallback={<>Loading</>}>
+                <SignInForDoctor />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Auth/SignInForDoctor/PersonalDetails'
+            element={
+              <Suspense fallback={<>Loading</>}>
+                <PersonalDetailsDoctor />
+              </Suspense>
+            }
+          />
         </Routes>
+        <DashBordForDoctor />
         <Footer />
       </main>
     </Router>
-  );
+  )
 }
