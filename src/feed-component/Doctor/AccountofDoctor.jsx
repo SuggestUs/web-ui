@@ -35,7 +35,7 @@ export default function AccountofDoctor() {
   return (
     <div>
       {!initialLoading ? (
-        <div className='rounded-lg shadow-2xl bg-white mx-6'>
+        <div className='rounded-lg mt-10 shadow-lg bg-white mx-6 font-inter'>
           <div className='p-1 md:p-12 text-left'>
             <div
               className='block border-4 border-white rounded-full mx-auto -mt-16 h-24 w-24 bg-cover bg-center md:h-32 md:w-32 md:-mt-32'
