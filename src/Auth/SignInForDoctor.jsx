@@ -19,19 +19,19 @@ export default function SignInForDoctor() {
 
     //  for medical specialization data
     const medical_specialization = [
-        { field: 'cardiolog' },
-        { field: 'Dermatology' },
-        { field: 'Endocrinology' },
-        { field: 'Gastroenterology' },
-        { field: 'Hematology' },
-        { field: 'Neurology' },
-        { field: 'Oncology' },
-        { field: 'Pediatrics' },
-        { field: 'Psychiatry' },
-        { field: 'Pulmonology' },
-        { field: 'Pulmonology' },
-        { field: 'Radiology' },
-        { field: 'Surgery' },
+        { feild: 'cardiolog' },
+        { feild: 'Dermatology' },
+        { feild: 'Endocrinology' },
+        { feild: 'Gastroenterology' },
+        { feild: 'Hematology' },
+        { feild: 'Neurology' },
+        { feild: 'Oncology' },
+        { feild: 'Pediatrics' },
+        { feild: 'Psychiatry' },
+        { feild: 'Pulmonology' },
+        { feild: 'Pulmonology' },
+        { feild: 'Radiology' },
+        { feild: 'Surgery' },
     ];
 
     // for medical specialization
@@ -106,8 +106,8 @@ export default function SignInForDoctor() {
                                         None
                                     </MenuItem>
                                     {medical_specialization.map((specialization, index) => (
-                                        <MenuItem key={index} value={specialization.field}>
-                                            {specialization.field}
+                                        <MenuItem key={index} value={specialization.feild}>
+                                            {specialization.feild}
                                         </MenuItem>
                                     ))}
                                 </Select>
@@ -134,7 +134,10 @@ export default function SignInForDoctor() {
                                 type='number'
                             />
                         </Grid>
-                        <Grid item xs={12} sm={6} className='flex  justify-center items-center' >
+                        {/* <Grid item xs={12} sm={6} className='flex  justify-center items-center'>
+                            <Button onClick={isSignIn} variant='contained' color='success'>Sign In</Button>
+                        </Grid> */}
+                        <Grid  item xs={12} sm={6} className='flex  justify-center items-center' >
                             <NextButton path='/Auth/SignInForDoctor/PersonalDetails' state={null}></NextButton>
                         </Grid>
                     </Grid>
@@ -142,7 +145,7 @@ export default function SignInForDoctor() {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
 

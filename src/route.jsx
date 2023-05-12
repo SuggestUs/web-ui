@@ -12,14 +12,6 @@ import Authentication from './Auth/Authentication';
 import SignInForDoctor from './Auth/SignInForDoctor';
 import PersonalDetailsDoctor from './Auth/PersonalDetailsDoctor';
 
-// const Navbar = lazy(() => import('./components/Navbar'))
-// const Mission = lazy(() => import('./pages/Mission'))
-// const WhoWeAre = lazy(() => import('./pages/WhoWeAre'))
-// const HomePage = lazy(() => import('./pages/HomePage'))
-// const Footer = lazy(() => import('./components/Footer'))
-// const Authentication = lazy(() => import('./Auth/Authentication'))
-// const SignInForDoctor = lazy(() => import('./Auth/SignInForDoctor'))
-// const PersonalDetailsDoctor = lazy(() => import('./Auth/PersonalDetailsDoctor'))
 const DashBordForDoctor = lazy(() =>
   import('./feed-component/Doctor/DashBordForDoctor')
 )
