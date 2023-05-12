@@ -30,8 +30,8 @@ export default function PersonalDetailsDoctor() {
                 <Link to="/Auth/SignInForDoctor"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
                 </Link>
                 <div className='my-1 font-inter font-bold text-3xl mb-5'> {"Welcome    "}<span className="text-green-500">Doctor !!</span></div>
-                <div className=" bg-white p-4 rounded-lg w-4/5 overflow-y-auto shadow-md h-96 " style={Shadow}>
-                    <Grid container spacing={2}>
+                <div className=" bg-white p-4 rounded-lg w-4/5 overflow-y-auto shadow-md md:h-96 h-[40rem] " style={Shadow}>
+                    <Grid container spacing={2} className='flex justify-center items-center space-y-5'>
                         <Grid item xs={12} >
                             <span className='text-center text-green-500 font-semibold'>Personal & Contact Details </span>
                         </Grid>
@@ -93,18 +93,8 @@ export default function PersonalDetailsDoctor() {
                                 fullWidth
                             />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                label="Clinical experience"
-                                name="Clinical experience"
-                                // value={formData.city}
-                                // onChange={handleChange}
-                                variant="outlined"
-                                fullWidth
-                                type='number'
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6} className='flex  justify-center items-center'>
+
+                        <Grid item xs={12} sm={6} className='flex justify-center items-center'>
                             <Button onClick={isSignIn} variant='contained' color='success'>Sign In</Button>
                         </Grid>
                     </Grid>
