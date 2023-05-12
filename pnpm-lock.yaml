@@ -37,6 +37,9 @@ dependencies:
   '@vitejs/plugin-react-swc':
     specifier: ^3.3.1
     version: 3.3.1(vite@4.3.5)
+  dotenv:
+    specifier: ^16.0.3
+    version: 16.0.3
   postcss-cli:
     specifier: ^10.1.0
     version: 10.1.0(postcss@8.4.23)
@@ -1547,6 +1550,11 @@ packages:
     dependencies:
       '@babel/runtime': 7.21.5
       csstype: 3.1.2
+    dev: false
+
+  /dotenv@16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: false
 
   /electron-to-chromium@1.4.391:
