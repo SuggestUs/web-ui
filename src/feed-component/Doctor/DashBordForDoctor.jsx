@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
@@ -53,8 +53,14 @@ export default function DashBordForDoctor() {
   const [value, setValue] = React.useState(0)
 
   const handleChange = (event, newValue) => {
-    setValue(newValue)
+     setValue(newValue)
   }
+  
+  useEffect(()=>{
+    const tabName = (value == 0) ? 'Home' : (value == 1) ? 'Community' : (value == 2) ? 'Request' : 'Account' 
+    navigate(`/Dashbord/${tabName}`)
+  } , [value])
+
 
   return (
     <div className='mx-auto flex flex-row justify-center md:w-4/5 h-screen '>
@@ -75,40 +81,34 @@ export default function DashBordForDoctor() {
                 <Tab
                   icon={<HomeIcon />}
                   style={Fontcolor}
-                  to='/home'
-                  component={Link}
                 />
               </Tooltip>
               <Tooltip title='Community'>
                 <Tab
                   icon={<PeopleOutlinedIcon />}
                   style={Fontcolor}
-                  to='/community'
-                  component={Link}
+  
                 />
               </Tooltip>
               <Tooltip title='Thought'>
                 <Tab
                   icon={<DynamicFeedOutlinedIcon />}
                   style={Fontcolor}
-                  to='/feed'
-                  component={Link}
+
                 />
               </Tooltip>
               <Tooltip title='Request'>
                 <Tab
                   icon={<MarkEmailUnreadOutlinedIcon />}
                   style={Fontcolor}
-                  to='/email'
-                  component={Link}
+
                 />
               </Tooltip>
               <Tooltip title='Account'>
                 <Tab
                   icon={<Avatar alt='Remy Sharp' src={Cat} />}
                   style={Fontcolor}
-                  to='/account'
-                  component={Link}
+ 
                 />
               </Tooltip>
             </Tabs>

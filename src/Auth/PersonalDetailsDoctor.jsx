@@ -17,9 +17,8 @@ export default function PersonalDetailsDoctor() {
 
     const isSignIn = () => {
         setSignIn(true)
-        navigate('/home')
+        navigate('/Dashbord/Home')
     }
-    // console.log('SignIn', SignIn);
 
     if (SignIn) {
         navigate('/feedForDoctor')
