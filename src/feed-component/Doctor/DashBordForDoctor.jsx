@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Tooltip from '@mui/material/Tooltip'
 import Avatar from '@mui/material/Avatar'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 // icons
 import DynamicFeedOutlinedIcon from '@mui/icons-material/DynamicFeedOutlined'
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
@@ -53,17 +53,17 @@ export default function DashBordForDoctor() {
   const [value, setValue] = React.useState(0)
 
   const handleChange = (event, newValue) => {
-     setValue(newValue)
+    setValue(newValue)
   }
-  
-  useEffect(()=>{
-    const tabName = (value == 0) ? 'Home' : (value == 1) ? 'Community' : (value == 2) ? 'Request' : 'Account' 
+
+  useEffect(() => {
+    const tabName = (value == 0) ? 'Home' : (value == 1) ? 'Community' : (value == 2) ? 'Request' : 'Account'
     navigate(`/Dashbord/${tabName}`)
-  } , [value])
+  }, [value])
 
 
   return (
-    <div className='mx-auto flex flex-row justify-center md:w-4/5 h-screen '>
+    <div className='mx-auto flex flex-row justify-center md:w-4/5 h-screen  '>
       <div className='justify-start md:w-[70%] w-full h-screen  overflow-hidden'>
         <Box sx={{ width: '100%' }}>
           <Box
@@ -87,7 +87,7 @@ export default function DashBordForDoctor() {
                 <Tab
                   icon={<PeopleOutlinedIcon />}
                   style={Fontcolor}
-  
+
                 />
               </Tooltip>
               <Tooltip title='Thought'>
@@ -108,7 +108,7 @@ export default function DashBordForDoctor() {
                 <Tab
                   icon={<Avatar alt='Remy Sharp' src={Cat} />}
                   style={Fontcolor}
- 
+
                 />
               </Tooltip>
             </Tabs>
