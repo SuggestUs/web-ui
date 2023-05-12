@@ -8,16 +8,17 @@ import Tooltip from '@mui/material/Tooltip'
 import Avatar from '@mui/material/Avatar'
 import { useNavigate } from 'react-router-dom'
 // icons
-import DynamicFeedOutlinedIcon from '@mui/icons-material/DynamicFeedOutlined'
-import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined'
 import MarkEmailUnreadOutlinedIcon from '@mui/icons-material/MarkEmailUnreadOutlined'
-import HomeIcon from '@mui/icons-material/Home'
+import { FiHome } from 'react-icons/fi'
+import { FaHashtag } from 'react-icons/fa'
+import { BsFillPeopleFill } from 'react-icons/bs'
 // files
 import AccountofDoctor from './AccountofDoctor'
 import CommunityForDoctor from './CommunityForDoctor'
 import RequestForDoctors from './RequestForDoctors'
 import FeedForDoctor from './FeedForDoctor'
 import Cat from '/favicon.avif'
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props
@@ -67,9 +68,9 @@ export default function DashBordForDoctor() {
       <div className='justify-start md:w-[70%] w-full h-screen  overflow-hidden'>
         <Box sx={{ width: '100%' }}>
           <Box
-            sx={{ borderBottom: 1, borderColor: 'divider' }}
             className='flex flex-row justify-center '
           >
+            {/*  For Tabs section */}
             <Tabs
               value={value}
               onChange={handleChange}
@@ -79,20 +80,20 @@ export default function DashBordForDoctor() {
             >
               <Tooltip title='Home'>
                 <Tab
-                  icon={<HomeIcon />}
+                  icon={<FiHome className='text-2xl' />}
                   style={Fontcolor}
                 />
               </Tooltip>
               <Tooltip title='Community'>
                 <Tab
-                  icon={<PeopleOutlinedIcon />}
+                  icon={<BsFillPeopleFill className='text-2xl' />}
                   style={Fontcolor}
 
                 />
               </Tooltip>
               <Tooltip title='Thought'>
                 <Tab
-                  icon={<DynamicFeedOutlinedIcon />}
+                  icon={<FaHashtag className='text-2xl' />}
                   style={Fontcolor}
 
                 />
