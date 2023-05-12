@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
-// SDK FOR DOCTOR 
+// SDK FOR DOCTOR //
 const firebaseConfig_doctor = {
   apiKey: "AIzaSyA56aNujMinkgWZtYB0CiaKCoub8bYSqew",
   authDomain: "suggest-us-doctor.firebaseapp.com",
@@ -14,7 +14,7 @@ const firebaseConfig_doctor = {
 };
 
 
-// SDK FOR USER
+// SDK FOR USER //
 const firebaseConfig_user = {
     apiKey: "AIzaSyD5tcnGlKCUnFU1KY5n4yDgOCO4ks1LwWc",
     authDomain: "suggest-us-user.firebaseapp.com",
