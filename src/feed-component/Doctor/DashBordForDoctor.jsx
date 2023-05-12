@@ -18,6 +18,7 @@ import CommunityForDoctor from './CommunityForDoctor'
 import RequestForDoctors from './RequestForDoctors'
 import FeedForDoctor from './FeedForDoctor'
 import Cat from '/favicon.avif'
+import Suggestion from './Suggestion'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props
@@ -75,40 +76,25 @@ export default function DashBordForDoctor() {
                 <Tab
                   icon={<HomeIcon />}
                   style={Fontcolor}
-                  to='/home'
+                  to='/dashboard'
                   component={Link}
                 />
               </Tooltip>
               <Tooltip title='Community'>
-                <Tab
-                  icon={<PeopleOutlinedIcon />}
-                  style={Fontcolor}
-                  to='/community'
-                  component={Link}
-                />
+                <Tab icon={<PeopleOutlinedIcon />} style={Fontcolor} />
               </Tooltip>
               <Tooltip title='Thought'>
-                <Tab
-                  icon={<DynamicFeedOutlinedIcon />}
-                  style={Fontcolor}
-                  to='/feed'
-                  component={Link}
-                />
+                <Tab icon={<DynamicFeedOutlinedIcon />} style={Fontcolor} />
               </Tooltip>
               <Tooltip title='Request'>
-                <Tab
-                  icon={<MarkEmailUnreadOutlinedIcon />}
-                  style={Fontcolor}
-                  to='/email'
-                  component={Link}
-                />
+                <Tab icon={<MarkEmailUnreadOutlinedIcon />} style={Fontcolor} />
               </Tooltip>
               <Tooltip title='Account'>
                 <Tab
                   icon={<Avatar alt='Remy Sharp' src={Cat} />}
                   style={Fontcolor}
-                  to='/account'
-                  component={Link}
+                  //   to='/account'
+                  //   component={Link}
                 />
               </Tooltip>
             </Tabs>
@@ -131,7 +117,7 @@ export default function DashBordForDoctor() {
         </Box>
       </div>
       <div className='justify-end w-[30%] bordermx-2 my-2 hidden md:block border'>
-        "Suggestion"
+        <Suggestion />
       </div>
     </div>
   )

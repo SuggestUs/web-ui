@@ -7,7 +7,7 @@ const Mission = lazy(() => import('./pages/Mission'))
 const WhoWeAre = lazy(() => import('./pages/WhoWeAre'))
 const HomePage = lazy(() => import('./pages/HomePage'))
 const Footer = lazy(() => import('./components/Footer'))
-const Authentication = lazy(() => import('./Auth/Authentication1'))
+const Authentication = lazy(() => import('./Auth/Authentication'))
 const SignInForDoctor = lazy(() => import('./Auth/SignInForDoctor'))
 const PersonalDetailsDoctor = lazy(() => import('./Auth/PersonalDetailsDoctor'))
 const DashBordForDoctor = lazy(() =>
@@ -68,8 +68,16 @@ export default function MainRoute() {
               </Suspense>
             }
           />
+          <Route
+            path='/dashboard'
+            element={
+              <Suspense fallback={<>Loading</>}>
+                <DashBordForDoctor />
+              </Suspense>
+            }
+          />
         </Routes>
-        <DashBordForDoctor />
+
         <Footer />
       </main>
     </Router>
