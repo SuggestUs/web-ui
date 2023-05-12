@@ -5,22 +5,15 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useNavigate } from "react-router-dom";
 import SignInForUser from './SignInForUser';
-import {USER , DOCTOR} from '../../src/Role/UserRole.js'
 
 export default function SignIn() {
 
     const history = useNavigate();
-    const [Role, setRole] = React.useState('Doctor');
+    const [Role, setRole] = React.useState('User');
 
     const handleChangeInRole = (event) => {
         setRole(event.target.value);
-        if(Role == 'Doctor'){
-            DOCTOR = true
-            USER  = false 
-        }else{
-            USER = true
-            DOCTOR = false
-        }
+        localStorage.setItem("userType" , Role);
     };
 
     if (Role === 'Doctor') {
@@ -28,14 +21,8 @@ export default function SignIn() {
     }
 
     useEffect(()=>{
-        if(Role == 'Doctor'){
-            DOCTOR = true
-            USER  = false 
-        }
-        if(Role == 'User'){
-            USER = true
-            DOCTOR = false
-        }
+            localStorage.setItem("userType" , Role);
+
     }, [])
     return (
         <div className='flex flex-col'>

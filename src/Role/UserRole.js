@@ -1,3 +1,5 @@
-export let USER ;
-export let DOCTOR ;
+ let roleUser ;
+ let  roleDoctor; 
+
+ export {roleDoctor, roleUser}
 

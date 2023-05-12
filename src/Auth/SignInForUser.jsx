@@ -8,7 +8,8 @@ import {validationForUserSignIn} from '../datavalidation/validationForData.js'
 export default function SignInForUser() {
   
   const [dataForUserSignIn , setUserSignInData] = useState({
-     Full_Name : '',
+     First_Name : '',
+     Last_Name : '',
      Email : '',
      Password : '',
     })
@@ -16,6 +17,7 @@ export default function SignInForUser() {
   const handleSignInForUser = ()=>{
       let validate = validationForUserSignIn(dataForUserSignIn)
       if(validate){
+        console.log('dataForUserSignIn', dataForUserSignIn)
          alert("Data is all set")
       }
   } 
@@ -32,9 +34,19 @@ export default function SignInForUser() {
         <FormControl fullWidth className='my-5'>
           <TextField
             className='my-5'
-            label="Full Name"
-            type='Full Name'
-            name='Full_Name'
+            label="First Name"
+            type='First Name'
+            name='First_Name'
+            onChange={(e)=>handleSignInData(e)}
+            style={{
+              margin: '10px 0px'
+            }}
+          />
+          <TextField
+            className='my-5'
+            label="Last Name"
+            type='Last Name'
+            name='Last_Name'
             onChange={(e)=>handleSignInData(e)}
             style={{
               margin: '10px 0px'

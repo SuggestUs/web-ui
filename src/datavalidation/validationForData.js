@@ -5,13 +5,18 @@ export const validationForUserSignIn = (obj)=>{
             return  false
         }
     })
-    const emailRegx =  /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-    if(emailRegx.test(obj.Email)){
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailRegex.test(obj.Email)){
         alert("Email is invalid ")
         return false
     }
 
     return true
+}
+
+export const validationForDoctorSignIn = (obj)=>{
+    
 }
 
 export const anything = {}
