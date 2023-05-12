@@ -14,7 +14,7 @@ const firebaseConfig_doctor = {
 };
 
 
-// SDK FOR USER //
+// SDK FOR USER.  //
 const firebaseConfig_user = {
     apiKey: "AIzaSyD5tcnGlKCUnFU1KY5n4yDgOCO4ks1LwWc",
     authDomain: "suggest-us-user.firebaseapp.com",
