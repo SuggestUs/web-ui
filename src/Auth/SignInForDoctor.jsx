@@ -1,45 +1,34 @@
 import React from 'react'
-import { TextField, Grid } from '@mui/material';
-import NextButton from '../Navigator/NextButton';
+import { TextField, Grid, Button ,FormControl} from '@mui/material';
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from 'react-router-dom';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-
+import { useNavigate } from "react-router-dom";
+import { validationForDoctorProffessionalDetails } from '../datavalidation/validationForData'
 
 
 export default function SignInForDoctor() {
+
+
+    const navigate = useNavigate()
 
     const Shadow = {
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
     }
 
-    //  for medical specialization data
-    const medical_specialization = [
-        { feild: 'cardiolog' },
-        { feild: 'Dermatology' },
-        { feild: 'Endocrinology' },
-        { feild: 'Gastroenterology' },
-        { feild: 'Hematology' },
-        { feild: 'Neurology' },
-        { feild: 'Oncology' },
-        { feild: 'Pediatrics' },
-        { feild: 'Psychiatry' },
-        { feild: 'Pulmonology' },
-        { feild: 'Pulmonology' },
-        { feild: 'Radiology' },
-        { feild: 'Surgery' },
-    ];
+    const [dataForProfessionalDetail, setProfessionalData] = useState({
+        Email: '',
+        Password: ''
+    })
 
-    // for medical specialization
-    const [Role, setRole] = useState("None");
 
-    const handleChange = (event) => {
-        setRole(event.target.value);
-    };
+    const validationForDoctorProffessionalDetails = () => {
+
+    }
+
+    const isSignIn = () => {
+        navigate('/Dashbord')
+    }
 
     return (
         <div>
@@ -48,99 +37,79 @@ export default function SignInForDoctor() {
                 <Link to="/Auth"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
                 </Link>
                 <div className='my-1 font-inter font-bold text-3xl mb-5'> {"Welcome    "}<span className="text-green-500">Doctor !!</span></div>
-                <div className=" bg-white p-4 rounded-lg w-4/5 overflow-y-auto shadow-md h-96 " style={Shadow}>
-                    <Grid container spacing={2}>
+                <div className=" bg-white p-4 rounded-lg w-1/2 overflow-y-auto shadow-md h-96 " style={Shadow}>
+                    {/* <Grid container spacing={2}>
                         <Grid item xs={12} >
                             <p className='text-center font-inter text-green-400 text-2xl font-semibold'>Enter your details</p>
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                label="First Name"
-                                name="firstName"
-                                variant="outlined"
-                                fullWidth
-                            //className={classes.input}
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                label="Last Name"
-                                name="lastName"
-                                variant="outlined"
-                                fullWidth
-                            //className={classes.input}
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
                                 label="Email"
-                                name="email"
-                                // value={formData.email}
-                                // onChange={handleChange}
+                                name="Email"
                                 variant="outlined"
                                 fullWidth
-                            //className={classes.input}
+                                helperText="THIS EMAIL IS CONCIDER AS YOUR LOGIN ID"
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                label="Medical License Number"
-                                name="number"
-                                variant="outlined"
-                                fullWidth
-                                //className={classes.input}
-                                type="number"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <FormControl fullWidth >
-                                <InputLabel id="demo-simple-select-helper-label">Medical specialization</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={Role}
-                                    label="Medical specialization"
-                                    onChange={handleChange}
-                                >
-                                    <MenuItem value='None'>
-                                        None
-                                    </MenuItem>
-                                    {medical_specialization.map((specialization, index) => (
-                                        <MenuItem key={index} value={specialization.feild}>
-                                            {specialization.feild}
-                                        </MenuItem>
-                                    ))}
-                                </Select>
-                            </FormControl>
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                label="Hospital Affiliation"
-                                name="Hospital Affiliation"
-                                // value={formData.address1}
-                                // onChange={handleChange}
+                                label="Password"
+                                name="Password"
                                 variant="outlined"
                                 fullWidth
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                label="Clinical experience"
-                                name="Clinical experience"
-                                // value={formData.city}
-                                // onChange={handleChange}
+                                label="Confirm Password"
+                                name="Confirm_Password"
                                 variant="outlined"
                                 fullWidth
-                                type='number'
+                                helperText="Make sure your password match as above one"
                             />
                         </Grid>
-                        {/* <Grid item xs={12} sm={6} className='flex  justify-center items-center'>
+
+
+                        <Grid item xs={12} sm={6} className='flex  justify-center items-center'>
                             <Button onClick={isSignIn} variant='contained' color='success'>Sign In</Button>
-                        </Grid> */}
-                        <Grid  item xs={12} sm={6} className='flex  justify-center items-center' >
-                            <NextButton path='/Auth/SignInForDoctor/PersonalDetails' state={null}></NextButton>
                         </Grid>
-                    </Grid>
+
+                    </Grid> */}
+                    <div className='User-from flex flex-col'>
+                        <div className='text-center'>
+                            <FormControl fullWidth className='my-5'>
+                                
+                                <TextField
+                                    className='my-5'
+                                    label="Email"
+                                    type='email'
+                                    style={{
+                                        margin: '10px 0px'
+                                    }}
+                                    helperText='This email is concider as your login Id'
+                                />
+                                <TextField
+                                    className='my-5'
+                                    label="Password"
+                                    type='password'
+                                    style={{
+                                        margin: '10px 0px'
+                                    }}
+                                />
+                                <TextField
+                                    className='my-5'
+                                    label="Confirm Password"
+                                    type='password'
+                                    style={{
+                                        margin: '10px 0px'
+                                    }}
+                                />
+                            </FormControl>
+                        </div>
+                        <div className='my-auto'>
+                            <Button variant='contained' color='success' onClick={isSignIn}>Sign In</Button>
+                        </div>
+                    </div>
 
                 </div>
 

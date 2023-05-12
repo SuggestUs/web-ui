@@ -15,8 +15,8 @@ export const validationForUserSignIn = (obj)=>{
     return true
 }
 
-export const validationForDoctorSignIn = (obj)=>{
-    
+export const validationForDoctorProffessionalDetails = (obj)=>{
+
 }
 
 export const anything = {}

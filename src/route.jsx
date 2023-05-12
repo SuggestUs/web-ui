@@ -11,7 +11,7 @@ import HomePage from './pages/HomePage'
 import Authentication from './Auth/Authentication';
 import SignInForDoctor from './Auth/SignInForDoctor';
 import PersonalDetailsDoctor from './Auth/PersonalDetailsDoctor';
-
+import ProfessionalDetails from './Auth/ProfessionalDetails';
 const DashBordForDoctor = lazy(() =>
   import('./feed-component/Doctor/DashBordForDoctor')
 )
@@ -55,18 +55,26 @@ export default function MainRoute() {
             }
           />
           <Route
-            path='/Auth/SignInForDoctor'
+            path='/Auth/ProfessionalDetails'
             element={
               <Suspense fallback={<CircularProgress/>}>
-                <SignInForDoctor />
+                <ProfessionalDetails />
               </Suspense>
             }
           />
           <Route
-            path='/Auth/SignInForDoctor/PersonalDetails'
+            path='/Auth/PersonalDetails'
             element={
               <Suspense fallback={<CircularProgress/>}>
                 <PersonalDetailsDoctor />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Auth/SignInForDoctor'
+            element={
+              <Suspense fallback={<CircularProgress/>}>
+                <SignInForDoctor/>
               </Suspense>
             }
           />

@@ -3,31 +3,19 @@ import { TextField, Button, Grid } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from 'react-router-dom';
-
+import NextButton from '../Navigator/NextButton';
 export default function PersonalDetailsDoctor() {
 
     const navigate = useNavigate()
-    const [SignIn, setSignIn] = useState(false)
-
 
     const Shadow = {
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'
     }
 
-
-    const isSignIn = () => {
-        setSignIn(true)
-        navigate('/Dashbord/Home')
-    }
-
-    if (SignIn) {
-        navigate('/feedForDoctor')
-    }
-
     return (
         <div>
             <div className="flex flex-col justify-center items-center h-screen">
-                <Link to="/Auth/SignInForDoctor"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
+                <Link to="/Auth/ProfessionalDetails"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
                 </Link>
                 <div className='my-1 font-inter font-bold text-3xl mb-5'> {"Welcome    "}<span className="text-green-500">Doctor !!</span></div>
                 <div className=" bg-white p-4 rounded-lg w-4/5 overflow-y-auto shadow-md md:h-96 h-[40rem] " style={Shadow}>
@@ -42,7 +30,6 @@ export default function PersonalDetailsDoctor() {
                                 variant="outlined"
                                 fullWidth
                                 type='number'
-                            //className={classes.input}
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -51,7 +38,7 @@ export default function PersonalDetailsDoctor() {
                                 name="Heighest-Education"
                                 variant="outlined"
                                 fullWidth
-                            //className={classes.input}
+
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -60,7 +47,7 @@ export default function PersonalDetailsDoctor() {
                                 name="College"
                                 variant="outlined"
                                 fullWidth
-                            //className={classes.input}
+
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -69,7 +56,7 @@ export default function PersonalDetailsDoctor() {
                                 name="Contact_No"
                                 variant="outlined"
                                 fullWidth
-                            //className={classes.input}
+
                             />
                         </Grid>
                         <Grid item xs={12} sm={6}>
@@ -78,7 +65,7 @@ export default function PersonalDetailsDoctor() {
                                 name="number"
                                 variant="outlined"
                                 fullWidth
-                                //className={classes.input}
+
                                 type="number"
                             />
                         </Grid>
@@ -94,8 +81,9 @@ export default function PersonalDetailsDoctor() {
                             />
                         </Grid>
 
-                        <Grid item xs={12} sm={6} className='flex justify-center items-center'>
-                            <Button onClick={isSignIn} variant='contained' color='success'>Sign In</Button>
+
+                        <Grid item xs={12} sm={6} className='flex  justify-center items-center' >
+                            <NextButton path='/Auth/SignInForDoctor' state={null}></NextButton>
                         </Grid>
                     </Grid>
 

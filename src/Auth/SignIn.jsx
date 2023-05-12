@@ -8,7 +8,7 @@ import SignInForUser from './SignInForUser';
 
 export default function SignIn() {
 
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [Role, setRole] = React.useState('User');
 
     const handleChangeInRole = (event) => {
@@ -17,7 +17,7 @@ export default function SignIn() {
     };
 
     if (Role === 'Doctor') {
-        history('/Auth/SignInForDoctor')
+        navigate('/Auth/ProfessionalDetails')
     }
 
     useEffect(()=>{
@@ -37,8 +37,7 @@ export default function SignIn() {
                         value={Role}
                         label="Select Role"
                         onChange={handleChangeInRole}
-                        defaultValue='Doctor'
-
+                        defaultValue='User'
                     >
                         <MenuItem value={'Doctor'}>Doctor</MenuItem>
                         <MenuItem value={'User'}>User</MenuItem>
