@@ -7,15 +7,15 @@ import { useNavigate } from "react-router-dom";
 import SignInForUser from './SignInForUser';
 export default function SignIn() {
 
-    const history = useNavigate();
-    const [Role, setRole] = React.useState('');
+    const navigate = useNavigate();
+    const [Role, setRole] = React.useState('User');
 
     const handleChangeInRole = (event) => {
         setRole(event.target.value);
     };
 
     if (Role === 'Doctor') {
-        history('/Auth/SignInForDoctor')
+        navigate('/Auth/ProfessionalDetails')
     }
     return (
         <div className='flex flex-col'>
@@ -30,7 +30,7 @@ export default function SignIn() {
                         value={Role}
                         label="Select Role"
                         onChange={handleChangeInRole}
-
+                        defaultValue='User'
                     >
                         <MenuItem value={'Doctor'}>Doctor</MenuItem>
                         <MenuItem value={'User'}>User</MenuItem>

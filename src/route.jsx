@@ -11,15 +11,7 @@ import HomePage from './pages/HomePage'
 import Authentication from './Auth/Authentication';
 import SignInForDoctor from './Auth/SignInForDoctor';
 import PersonalDetailsDoctor from './Auth/PersonalDetailsDoctor';
-
-// const Navbar = lazy(() => import('./components/Navbar'))
-// const Mission = lazy(() => import('./pages/Mission'))
-// const WhoWeAre = lazy(() => import('./pages/WhoWeAre'))
-// const HomePage = lazy(() => import('./pages/HomePage'))
-// const Footer = lazy(() => import('./components/Footer'))
-// const Authentication = lazy(() => import('./Auth/Authentication'))
-// const SignInForDoctor = lazy(() => import('./Auth/SignInForDoctor'))
-// const PersonalDetailsDoctor = lazy(() => import('./Auth/PersonalDetailsDoctor'))
+import ProfessionalDetails from './Auth/ProfessionalDetails';
 const DashBordForDoctor = lazy(() =>
   import('./feed-component/Doctor/DashBordForDoctor')
 )
@@ -63,18 +55,26 @@ export default function MainRoute() {
             }
           />
           <Route
-            path='/Auth/SignInForDoctor'
+            path='/Auth/ProfessionalDetails'
             element={
               <Suspense fallback={<CircularProgress/>}>
-                <SignInForDoctor />
+                <ProfessionalDetails />
               </Suspense>
             }
           />
           <Route
-            path='/Auth/SignInForDoctor/PersonalDetails'
+            path='/Auth/PersonalDetails'
             element={
               <Suspense fallback={<CircularProgress/>}>
                 <PersonalDetailsDoctor />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Auth/SignInForDoctor'
+            element={
+              <Suspense fallback={<CircularProgress/>}>
+                <SignInForDoctor/>
               </Suspense>
             }
           />
