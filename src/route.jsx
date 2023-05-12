@@ -3,17 +3,23 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
 import CircularProgress from '@mui/material/CircularProgress';
-// or
-// import { CircularProgress } from '@mui/material';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Mission from './pages/Mission'
+import WhoWeAre from './pages/WhoWeAre'
+import HomePage from './pages/HomePage'
+import Authentication from './Auth/Authentication';
+import SignInForDoctor from './Auth/SignInForDoctor';
+import PersonalDetailsDoctor from './Auth/PersonalDetailsDoctor';
 
-const Navbar = lazy(() => import('./components/Navbar'))
-const Mission = lazy(() => import('./pages/Mission'))
-const WhoWeAre = lazy(() => import('./pages/WhoWeAre'))
-const HomePage = lazy(() => import('./pages/HomePage'))
-const Footer = lazy(() => import('./components/Footer'))
-const Authentication = lazy(() => import('./Auth/Authentication'))
-const SignInForDoctor = lazy(() => import('./Auth/SignInForDoctor'))
-const PersonalDetailsDoctor = lazy(() => import('./Auth/PersonalDetailsDoctor'))
+// const Navbar = lazy(() => import('./components/Navbar'))
+// const Mission = lazy(() => import('./pages/Mission'))
+// const WhoWeAre = lazy(() => import('./pages/WhoWeAre'))
+// const HomePage = lazy(() => import('./pages/HomePage'))
+// const Footer = lazy(() => import('./components/Footer'))
+// const Authentication = lazy(() => import('./Auth/Authentication'))
+// const SignInForDoctor = lazy(() => import('./Auth/SignInForDoctor'))
+// const PersonalDetailsDoctor = lazy(() => import('./Auth/PersonalDetailsDoctor'))
 const DashBordForDoctor = lazy(() =>
   import('./feed-component/Doctor/DashBordForDoctor')
 )
