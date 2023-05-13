@@ -1,6 +1,5 @@
 import React from 'react'
-import { TextField, Grid, Button ,FormControl} from '@mui/material';
-import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
+import { TextField, Grid, Button, FormControl } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -34,8 +33,6 @@ export default function SignInForDoctor() {
         <div>
 
             <div className="flex flex-col justify-center items-center h-screen">
-                <Link to="/Auth"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
-                </Link>
                 <div className='my-1 font-inter font-bold text-3xl mb-5'> {"Welcome    "}<span className="text-green-500">Doctor !!</span></div>
                 <div className=" bg-white p-4 rounded-lg w-1/2 overflow-y-auto shadow-md h-96 " style={Shadow}>
                     {/* <Grid container spacing={2}>
@@ -78,7 +75,7 @@ export default function SignInForDoctor() {
                     <div className='User-from flex flex-col'>
                         <div className='text-center'>
                             <FormControl fullWidth className='my-5'>
-                                
+
                                 <TextField
                                     className='my-5'
                                     label="Email"
@@ -106,8 +103,11 @@ export default function SignInForDoctor() {
                                 />
                             </FormControl>
                         </div>
-                        <div className='my-auto'>
+                        <div className='my-auto space-x-5 pt-5 justify-center items-center flex-wrap lg:flex'>
                             <Button variant='contained' color='success' onClick={isSignIn}>Sign In</Button>
+                            <Link to='/Auth/PersonalDetails'>
+                                <Button variant='outlined' color='success'>Back</Button>
+                            </Link>
                         </div>
                     </div>
 

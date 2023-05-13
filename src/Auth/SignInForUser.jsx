@@ -3,6 +3,8 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+
 
 export default function SignInForUser() {
   return (
@@ -43,8 +45,11 @@ export default function SignInForUser() {
           />
         </FormControl>
       </div>
-      <div className='my-auto'>
+      <div className='my-auto space-x-5'>
         <Button variant='contained' color='success'>Log In</Button>
+        <Link to='/'>
+          <Button variant='outlined' color='success'>Back</Button>
+        </Link>
       </div>
     </div>
   )

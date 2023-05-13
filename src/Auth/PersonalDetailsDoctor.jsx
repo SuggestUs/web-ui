@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { TextField, Button, Grid } from '@mui/material';
 import { useNavigate } from "react-router-dom";
-import { ArrowUturnLeftIcon } from "@heroicons/react/24/outline";
 import { Link } from 'react-router-dom';
 import NextButton from '../Navigator/NextButton';
 export default function PersonalDetailsDoctor() {
@@ -15,8 +14,6 @@ export default function PersonalDetailsDoctor() {
     return (
         <div>
             <div className="flex flex-col justify-center items-center h-screen">
-                <Link to="/Auth/ProfessionalDetails"><ArrowUturnLeftIcon className="h-6 w-6 text-black" />
-                </Link>
                 <div className='my-1 font-inter font-bold text-3xl mb-5'> {"Welcome    "}<span className="text-green-500">Doctor !!</span></div>
                 <div className=" bg-white p-4 rounded-lg w-4/5 overflow-y-auto shadow-md md:h-96 h-[40rem] " style={Shadow}>
                     <Grid container spacing={2} className='flex justify-center items-center space-y-5'>
@@ -82,8 +79,11 @@ export default function PersonalDetailsDoctor() {
                         </Grid>
 
 
-                        <Grid item xs={12} sm={6} className='flex  justify-center items-center' >
+                        <Grid item xs={12} sm={6} className='flex  justify-center items-center space-x-5' >
                             <NextButton path='/Auth/SignInForDoctor' state={null}></NextButton>
+                            <Link to='/Auth/ProfessionalDetails'>
+                                <Button variant='outlined' color='success'>Back</Button>
+                            </Link>
                         </Grid>
                     </Grid>
 
