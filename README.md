@@ -36,3 +36,7 @@ Contributing to open-source software (OSS) projects can be a rewarding and fulfi
 <a href="https://github.com/SuggestUs/web-ui/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=SuggestUs/web-ui" />
 </a>
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
