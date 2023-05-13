@@ -6,7 +6,7 @@ const features = [
   {
     name: 'Health Conditions',
     description:
-      'his section could include a comprehensive list of medical conditions, ranging from common ailments like the flu to more serious diseases like cancer.',
+      'This section could include a comprehensive list of medical conditions, ranging from common ailments like the flu to more serious diseases like cancer.',
     icon: PlusCircleIcon,
   },
   {
