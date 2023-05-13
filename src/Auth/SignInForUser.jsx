@@ -1,24 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import {validationForUserSignIn} from '../datavalidation/validationForData.js'
+import {objForUserSignInData} from '../factory/factory-for-form.js'
+import AlertBox from '../Alert/Alert.jsx';
+import { signInForUserInDataBase } from '../server-script/dataStorageForUser.js';
 
 export default function SignInForUser() {
   
-  const [dataForUserSignIn , setUserSignInData] = useState({
-     First_Name : '',
-     Last_Name : '',
-     Email : '',
-     Password : '',
-    })
+  const [dataForUserSignIn , setUserSignInData] = useState(objForUserSignInData)
+    
+  const [alert, setAlert] = useState({
+      display: false,
+      severityType: '',
+      message: ''
+  })
 
   const handleSignInForUser = ()=>{
-      let validate = validationForUserSignIn(dataForUserSignIn)
-      if(validate){
-        console.log('dataForUserSignIn', dataForUserSignIn)
-         alert("Data is all set")
+      let validate = validationForUserSignIn(objForUserSignInData);
+      console.log("Chck" , validate)
+      if(validate.res){
+         setAlert({
+          display : validate.res,
+          severityType : 'error',
+          message : validate.message
+         })
+      }
+      else{
+        setAlert({
+          display : false,
+          severityType : 'error',
+          message : ''
+         })
+         
+        //  Firebase things 
+        signInForUserInDataBase()
       }
   } 
 
@@ -27,9 +45,17 @@ export default function SignInForUser() {
       ...dataForUserSignIn , 
       [event.target.name] : event.target.value
     })
+    objForUserSignInData[event.target.name] = event.target.value
   }
+
+  useEffect(()=>{
+    setUserSignInData(objForUserSignInData)
+  }, [])
   return (
     <div className='User-from flex flex-col'>
+      <div className='alert-box absolute top-0 z-10 left-1 w-1/3'>
+        {alert.display && (<AlertBox severity={alert.severityType} message={alert.message} />)}
+      </div>
       <div className='text-center'>
         <FormControl fullWidth className='my-5'>
           <TextField
@@ -41,6 +67,7 @@ export default function SignInForUser() {
             style={{
               margin: '10px 0px'
             }}
+            value={objForUserSignInData.First_Name}
           />
           <TextField
             className='my-5'
@@ -51,6 +78,7 @@ export default function SignInForUser() {
             style={{
               margin: '10px 0px'
             }}
+            value={objForUserSignInData.Last_Name}
           />
           <TextField
             className='my-5'
@@ -61,6 +89,7 @@ export default function SignInForUser() {
             style={{
               margin: '10px 0px'
             }}
+            value={objForUserSignInData.Email}
           />
           <TextField
             className='my-5'
@@ -71,14 +100,17 @@ export default function SignInForUser() {
             style={{
               margin: '10px 0px'
             }}
+            value={objForUserSignInData.Password}
           />
           <TextField
             className='my-5'
             label="Confirm Password"
+            name="Confirm_Password"
             type='password'
             style={{
               margin: '10px 0px'
             }}
+            onChange={(e)=>handleSignInData(e)}
           />
         </FormControl>
       </div>

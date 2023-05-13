@@ -12,8 +12,8 @@ export default function SignIn() {
     const [Role, setRole] = React.useState('User');
 
     const handleChangeInRole = (event) => {
+        localStorage.setItem("userType" , event.target.value);
         setRole(event.target.value);
-        localStorage.setItem("userType" , Role);
     };
 
     if (Role === 'Doctor') {
@@ -21,7 +21,8 @@ export default function SignIn() {
     }
 
     useEffect(()=>{
-            localStorage.setItem("userType" , Role);
+
+        localStorage.setItem("userType" , Role);
 
     }, [])
     return (
