@@ -31,8 +31,8 @@ export default function PersonalDetailsDoctor() {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <TextField
-                                label="Heighest Education"
-                                name="Heighest-Education"
+                                label="Highest Education"
+                                name="Highest-Education"
                                 variant="outlined"
                                 fullWidth
 
