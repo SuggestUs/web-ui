@@ -32,7 +32,7 @@ Make changes to the code
 Stage your changes using the following command
 
 ```bash
-git add -all
+git add --all
 ```
 
 Commit your changes using the following command
