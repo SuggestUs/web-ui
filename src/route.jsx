@@ -2,14 +2,16 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { lazy, Suspense } from 'react'
 
-const Navbar = lazy(() => import('./components/Navbar'))
-const Mission = lazy(() => import('./pages/Mission'))
-const WhoWeAre = lazy(() => import('./pages/WhoWeAre'))
-const HomePage = lazy(() => import('./pages/HomePage'))
-const Footer = lazy(() => import('./components/Footer'))
-const Authentication = lazy(() => import('./Auth/Authentication'))
-const SignInForDoctor = lazy(() => import('./Auth/SignInForDoctor'))
-const PersonalDetailsDoctor = lazy(() => import('./Auth/PersonalDetailsDoctor'))
+import CircularProgress from '@mui/material/CircularProgress';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Mission from './pages/Mission'
+import WhoWeAre from './pages/WhoWeAre'
+import HomePage from './pages/HomePage'
+import Authentication from './Auth/Authentication';
+import SignInForDoctor from './Auth/SignInForDoctor';
+import PersonalDetailsDoctor from './Auth/PersonalDetailsDoctor';
+import ProfessionalDetails from './Auth/ProfessionalDetails';
 const DashBordForDoctor = lazy(() =>
   import('./feed-component/Doctor/DashBordForDoctor')
 )
@@ -23,7 +25,7 @@ export default function MainRoute() {
           <Route
             path='/'
             element={
-              <Suspense fallback={<>Loading</>}>
+              <Suspense fallback={<CircularProgress/>}>
                 <HomePage />{' '}
               </Suspense>
             }
@@ -31,7 +33,7 @@ export default function MainRoute() {
           <Route
             path='/WhoWeAre'
             element={
-              <Suspense fallback={<>Loading</>}>
+              <Suspense fallback={<CircularProgress/>}>
                 <WhoWeAre />
               </Suspense>
             }
@@ -39,7 +41,7 @@ export default function MainRoute() {
           <Route
             path='/Mission'
             element={
-              <Suspense fallback={<>Loading</>}>
+              <Suspense fallback={<CircularProgress/>}>
                 <Mission />
               </Suspense>
             }
@@ -47,24 +49,40 @@ export default function MainRoute() {
           <Route
             path='/Auth'
             element={
-              <Suspense fallback={<>Loading</>}>
+              <Suspense fallback={<CircularProgress/>}>
                 <Authentication />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Auth/ProfessionalDetails'
+            element={
+              <Suspense fallback={<CircularProgress/>}>
+                <ProfessionalDetails />
+              </Suspense>
+            }
+          />
+          <Route
+            path='/Auth/PersonalDetails'
+            element={
+              <Suspense fallback={<CircularProgress/>}>
+                <PersonalDetailsDoctor />
               </Suspense>
             }
           />
           <Route
             path='/Auth/SignInForDoctor'
             element={
-              <Suspense fallback={<>Loading</>}>
-                <SignInForDoctor />
+              <Suspense fallback={<CircularProgress/>}>
+                <SignInForDoctor/>
               </Suspense>
             }
           />
           <Route
-            path='/Auth/SignInForDoctor/PersonalDetails'
+            path='/Dashbord/:name?'
             element={
-              <Suspense fallback={<>Loading</>}>
-                <PersonalDetailsDoctor />
+              <Suspense fallback={<CircularProgress/>}>
+                <DashBordForDoctor />
               </Suspense>
             }
           />
@@ -77,7 +95,6 @@ export default function MainRoute() {
             }
           />
         </Routes>
-
         <Footer />
       </main>
     </Router>
