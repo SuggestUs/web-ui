@@ -25,7 +25,6 @@ export default function AccountofDoctor() {
   }
 
   const handleChangeInProfile = (event) => {
-    console.log("URL", URL.createObjectURL(event.target.files[0]))
     setUrl(event.target.files[0]);
   }
 
@@ -54,7 +53,7 @@ export default function AccountofDoctor() {
                 style={{
                   marginLeft: "30px",
                 }}
-                src={URL.createObjectURL(urlForProfile)}
+                src={(urlForProfile!== '') && URL.createObjectURL(urlForProfile) }
                 sx={{ width: 90, height: 90 }}
               />
             </div>
