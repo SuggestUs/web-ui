@@ -5,6 +5,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom'
 
 export default function Login() {
     const [Role, setRole] = React.useState('User');
@@ -49,9 +50,11 @@ export default function Login() {
                     />
                 </FormControl>
             </div>
-            <div className='my-auto'>
+            <div className='my-auto space-x-5'>
                 <Button variant='contained' color='success'>Log In</Button>
-
+                <Link to='/'>
+                    <Button variant='outlined' color='success'>Back</Button>
+                </Link>
             </div>
         </div>
     )

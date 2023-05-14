@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Icon from '@mui/material/Icon'
 import CallIcon from '@mui/icons-material/Call'
 import SchoolIcon from '@mui/icons-material/School'
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital'
 import MarkEmailUnreadOutlinedIcon from '@mui/icons-material/MarkEmailUnreadOutlined'
 import AddModeratorIcon from '@mui/icons-material/AddModerator'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
-import EditIcon from '@mui/icons-material/Edit'
 export default function AccountofDoctor() {
   const params = useParams(null)
   const [initialLoading, setInitialLoading] = useState(false)

@@ -1,29 +1,28 @@
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { PlusCircleIcon } from "@heroicons/react/24/outline";
+
+
 
 const features = [
   {
-    name: 'Push to deploy',
+    name: 'Health Conditions',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
-    icon: CloudArrowUpIcon,
+      'his section could include a comprehensive list of medical conditions, ranging from common ailments like the flu to more serious diseases like cancer.',
+    icon: PlusCircleIcon,
   },
   {
-    name: 'SSL certificates',
+    name: 'Treatments and Procedures',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
+      ' This section could provide an overview of different medical treatments and procedures, including both conventional and alternative options', icon: PlusCircleIcon,
   },
   {
-    name: 'Simple queues',
+    name: 'Wellness and Prevention',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: ArrowPathIcon,
+      'This section could focus on promoting a healthy lifestyle and preventing illness', icon: PlusCircleIcon,
   },
   {
-    name: 'Advanced security',
+    name: 'Nutrition and Fitness',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: FingerPrintIcon,
+      'This section could provide information on healthy eating habits and tips for staying physically active', icon: PlusCircleIcon,
   },
 ]
 
@@ -33,11 +32,10 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Everything you need to deploy your app
+            Treatments and Procedures
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
+            Our mission is to provide a comprehensive, reliable, and user-friendly online platform that empowers individuals to make informed decisions about their health and well-being
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -45,7 +43,7 @@ export default function Example() {
             {features.map((feature) => (
               <div key={feature.name} className="relative pl-16">
                 <dt className="text-base font-semibold leading-7 text-gray-900">
-                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   {feature.name}

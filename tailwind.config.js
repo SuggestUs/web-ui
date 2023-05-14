@@ -7,12 +7,10 @@ export default {
         inter: ["Inter", "sans-serif"],
       },
       colors: {
-        primary: "#A66EFC",
-        secondary: "#000513",
+        primary: "#69C65F",
+        secondary: "#42803E",
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/custom-forms')
-  ],
+  plugins: [require("@tailwindcss/custom-forms")],
 };
