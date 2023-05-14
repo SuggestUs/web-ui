@@ -6,20 +6,29 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital'
 import MarkEmailUnreadOutlinedIcon from '@mui/icons-material/MarkEmailUnreadOutlined'
 import AddModeratorIcon from '@mui/icons-material/AddModerator'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
+import Avatar from '@mui/material/Avatar'
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import IconButton from '@mui/material/IconButton'
 export default function AccountofDoctor() {
   const params = useParams(null)
   const [initialLoading, setInitialLoading] = useState(false)
   const [data, setData] = useState()
 
+  const [urlForProfile, setUrl] = useState('');
   useEffect(() => {
     // getData()
   }, [])
 
   const getData = async () => {
-    // setInitialLoading(true)
     let url = ''
     const res = await fetchData()
   }
+
+  const handleChangeInProfile = (event) => {
+    console.log("URL", URL.createObjectURL(event.target.files[0]))
+    setUrl(event.target.files[0]);
+  }
+
 
   const copyText = async (e, type) => {
     let itemToCopy
@@ -30,10 +39,32 @@ export default function AccountofDoctor() {
     }
     await navigator.clipboard.writeText(itemToCopy)
   }
+
+  useEffect(() => {
+    
+  }, [urlForProfile])
+
   return (
     <div>
       {!initialLoading ? (
-        <div className='rounded-lg mt-10 shadow-lg bg-white mx-6 font-inter'>
+        <div className='rounded-lg mt-10 shadow-lg bg-white mx-6 font-inter flex flex-col'>
+          <div className='flex flex-row items-center justify-between w-full '>
+            <div className='flex justify-center '>
+              <Avatar
+                style={{
+                  marginLeft: "30px",
+                }}
+                src={URL.createObjectURL(urlForProfile)}
+                sx={{ width: 90, height: 90 }}
+              />
+            </div>
+            <div className='flex justify-end '>
+              <IconButton color="success" aria-label="upload picture" component="label">
+                  <input hidden  type="file" onChange={handleChangeInProfile} />
+                <PhotoCamera />
+              </IconButton>
+            </div>
+          </div>
           <div className='p-1 md:p-12 text-left'>
             <div
               className='block border-4 border-white rounded-full mx-auto -mt-16 h-24 w-24 bg-cover bg-center md:h-32 md:w-32 md:-mt-32'
